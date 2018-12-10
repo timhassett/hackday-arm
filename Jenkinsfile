@@ -27,11 +27,13 @@ pipeline {
             stage("build x86") {
                 steps {
                     sh "g++ hello.cpp -o hello-x86"
+                    sh "g++ primes.cpp -o primes-x86"
                 }
             }
             stage("build arm") {
                 steps {
                     sh "aarch64-linux-gnu-g++ hello.cpp -o hello-arm"
+                    sh "aarch64-linux-gnu-g++ primes.cpp -o primes-arm"
                 }
             }
         }
@@ -40,6 +42,8 @@ pipeline {
         steps {
             sh "aws s3 cp hello-x86 s3://hackday-tim-jhkdsgbfjksdbfjksdbf3/binaries/hello-x86 --no-sign-request"
             sh "aws s3 cp hello-arm s3://hackday-tim-jhkdsgbfjksdbfjksdbf3/binaries/hello-arm --no-sign-request"
+            sh "aws s3 cp hello-x86 s3://hackday-tim-jhkdsgbfjksdbfjksdbf3/binaries/primes-x86 --no-sign-request"
+            sh "aws s3 cp hello-arm s3://hackday-tim-jhkdsgbfjksdbfjksdbf3/binaries/primes-arm --no-sign-request"
         }
     }
   }
