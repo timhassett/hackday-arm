@@ -4,7 +4,7 @@ RUN apt-get update \
     && apt-get install -y --no-install-recommends \
     && apt-get install -y gcc-aarch64-linux-gnu g++-aarch64-linux-gnu \
     && apt-get install -y python python-pip\
-    && pip install awscli --upgrade --user
+    && pip install awscli --upgrade
 
 #    && apt-get install -y g++ libc6-armel-cross libc6-dev-armel-cross binutils-arm-linux-gnueabi libncurses5-dev
 
