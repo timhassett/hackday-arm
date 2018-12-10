@@ -1,0 +1,20 @@
+FROM ubuntu
+
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends \
+    && apt-get install -y g++ libc6-armel-cross libc6-dev-armel-cross binutils-arm-linux-gnueabi libncurses5-dev
+
+RUN apt-get install -y gcc-arm-linux-gnueabihf g++-arm-linux-gnueabihf 
+RUN apt-get install -y gcc-arm-linux-gnueabi g++-arm-linux-gnueabi
+    
+
+#RUN adduser --disabled-password --gecos "" --uid 1000 jenkins
+#USER jenkins
+
+RUN mkdir /src
+
+WORKDIR /src
+
+ADD ./ /src
+
+CMD ["/bin/bash"]
