@@ -42,8 +42,8 @@ pipeline {
         steps {
             sh "aws s3 cp hello-x86 s3://hackday-tim-jhkdsgbfjksdbfjksdbf3/binaries/hello-x86 --no-sign-request"
             sh "aws s3 cp hello-arm s3://hackday-tim-jhkdsgbfjksdbfjksdbf3/binaries/hello-arm --no-sign-request"
-            sh "aws s3 cp hello-x86 s3://hackday-tim-jhkdsgbfjksdbfjksdbf3/binaries/primes-x86 --no-sign-request"
-            sh "aws s3 cp hello-arm s3://hackday-tim-jhkdsgbfjksdbfjksdbf3/binaries/primes-arm --no-sign-request"
+            sh "aws s3 cp primes-x86 s3://hackday-tim-jhkdsgbfjksdbfjksdbf3/binaries/primes-x86 --no-sign-request"
+            sh "aws s3 cp primes-arm s3://hackday-tim-jhkdsgbfjksdbfjksdbf3/binaries/primes-arm --no-sign-request"
         }
     }
   }
