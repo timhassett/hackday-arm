@@ -7,8 +7,7 @@ pipeline {
 
   environment {
     AWS_REGION = 'ap-southeast-2'
-    OPS_ACCOUNT_ID = '658599474635'
-    DEV_ACCOUNT_ID = '672446392834'
+    OPS_ACCOUNT_ID = 'xxxxxxx'
     SOURCE_BUCKET = 'source.tools'
     PROJECT_NAME = 'hackday-arm' //Can't use dots (.) in cloudformation stackname
   }
@@ -41,4 +40,5 @@ pipeline {
             }
         }
     }
+  }
 }
